@@ -32,7 +32,7 @@ section {
 }
 .navbar .container {
   display: flex;
-  justify-content: space-between;
+  place-content: space-between;
 }
 .navbar .container .logo {
   font-weight: bold;
@@ -129,6 +129,8 @@ section {
 .features-section .container .features-list {
   margin: 0;
   padding-left: 0.1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 .features-section .container .features-list li {
   font-size: 1.1em;
@@ -216,21 +218,144 @@ section {
   .navbar .container {
     display: grid;
     grid-template-columns: 180px auto;
+    justify-content: center;
   }
-  .navbar nav {
+  .navbar .container nav {
     display: flex;
-    justify-content: space-between;
+    place-content: space-between;
     background: none;
     position: unset;
     height: auto;
     width: 100%;
     padding: 0;
   }
-  .navbar nav ul {
+  .navbar .container nav ul {
+    display: flex;
+    padding-top: 0.69rem;
+  }
+  .navbar .container nav ul li a {
+    color: black;
+    font-size: 1em;
+    padding: 0.1em 1em;
+  }
+  .navbar .container nav .primary-nav {
+    margin: 0;
+  }
+  .navbar .container nav .primary-nav li.current a {
+    font-weight: bold;
+  }
+  .navbar .container nav .secondary-nav .go-premium-cta a {
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -0.3em;
+  }
+  .navbar .container nav .secondary-nav .go-premium-cta a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1100px;
+    margin: 0 auto;
+  }
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .hero .container .left-col {
+    margin: 3em 3em 0 5em;
+  }
+  .hero .container .left-col h1 {
+    font-size: 3em;
+    width: 90%;
+  }
+  .hero .container .left-col .hero-cta {
     display: flex;
   }
-  .navbar nav a {
-    color: black;
-    background-color: bl;
+  .hero .container .left-col .hero-cta .primary-cta {
+    margin-right: 1em;
+  }
+  .hero .container .hero-img {
+    width: 40%;
+    margin-right: 8em;
+  }
+  .features-section {
+    position: relative;
+  }
+  .features-section .container .features-list {
+    display: block;
+    margin-left: 5em;
+  }
+  .features-section .container .features-list li {
+    font-size: 1.4em;
+  }
+  .features-section .container .features-list li::before {
+    height: 30px;
+    width: 30px;
+  }
+  .features-section .container img {
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 250px;
+    width: 350px;
+    bottom: -2em;
+  }
+  .testimonials-section {
+    padding-top: 8em;
+  }
+  .testimonials-section .container ul {
+    display: flex;
+  }
+  .testimonials-section .container ul li {
+    margin: 0 1em;
+  }
+  .contact-section {
+    position: relative;
+  }
+  .contact-section .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-section .container .contact-left {
+    width: 50%;
+  }
+  .contact-section .container .contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+  }
+  .contact-section .container .contact-right iframe {
+    padding-top: 3rem;
+    height: 80%;
+  }
+}
+@media only screen and (min-width: 1450px) {
+  .features-section::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 20em;
+    background: var(--primary-color);
+    left: 0;
+    top: -4em;
+  }
+  .features-section::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 20em;
+    background: url(../images/dott.png);
+    left: 5.5em;
+    top: 2em;
+  }
+  .features-section .container .features-list {
+    margin-left: 8em;
   }
 }
